@@ -34,3 +34,25 @@ section{
     border: 1px solid #ce93d8;
     box-shadow: 2px 2px 5px 3px #fce4ec;
 }
+.todo_container{
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.container{
+    border:1px solid gray;
+    border-radius: 5px;
+    width: 400px;
+    height: 300px;
+    padding: 10px 15px;
+    background-color: #c8e6c9;
+    margin-bottom: 20px;
+}
+h3{
+    color:black;
+}
+h5{
+    color:rgb(126, 35, 35);
+}

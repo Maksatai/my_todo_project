@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookStore</title>
-    <link rel="stylesheet" href="{% static 'static/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
 </head>
 <body>
     <section>
@@ -17,6 +17,15 @@
             />
             <button class="create_button">Поиск</button>
         </div>
+        <div class="todo_container">
+        {% for todo in todo_list %}
+        <div class="container">
+            <h3>{{ todo.title }}</h3>
+            <h4>{{ todo.subtitle }}</h4>
+            <h5>{{ todo.description }}</h5>
+        </div>
+        {% endfor %}
+    </div>
     </section>
 </body>
 </html>
