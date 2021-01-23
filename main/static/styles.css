@@ -17,7 +17,7 @@ section{
 .create_input{
     padding: 12px 5px;
     font-size: 18px;
-    width: 80%;
+    width: 22%;
 }
 .create_button{
     padding: 12px 20px;
@@ -45,7 +45,7 @@ section{
     border:1px solid gray;
     border-radius: 5px;
     width: 400px;
-    height: 300px;
+    height: auto;
     padding: 10px 15px;
     background-color: #c8e6c9;
     margin-bottom: 20px;

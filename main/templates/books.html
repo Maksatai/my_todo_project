@@ -10,12 +10,52 @@
 <body>
     <section>
         <div class="create_container">
+            <form action="{% url 'add-todo'%}" method="POST">
+                {% csrf_token %}
             <input
             class="create_input"
             type="text"
-            placeholder="Напишите название книги"
+            placeholder="Заголовок книги"
+            name="title"
             />
-            <button class="create_button">Поиск</button>
+            <input
+            class="create_input"
+            type="text"
+            placeholder="Подзаголовок книги"
+            name="subtitle"
+            />
+            <input
+            class="create_input"
+            type="text"
+            placeholder="Описание"
+            name="description"
+            />
+            <input
+            class="create_input"
+            type="text"
+            placeholder="Цена"
+            name="price"
+            />
+            <input
+            class="create_input"
+            type="text"
+            placeholder="Жанр"
+            name="genre"
+            />
+            <input
+            class="create_input"
+            type="text"
+            placeholder="Автор"
+            name="author"
+            />
+            <input
+            class="create_input"
+            type="text"
+            placeholder="Год выхода книги"
+            name="year"
+            />
+            <button class="create_button">Добавить</button>
+        </form>
         </div>
         <div class="todo_container">
         {% for todo in todo_list %}
@@ -23,6 +63,10 @@
             <h3>{{ todo.title }}</h3>
             <h4>{{ todo.subtitle }}</h4>
             <h5>{{ todo.description }}</h5>
+            <h4>{{ todo.price }}</h4>
+            <h4>{{ todo.genre }}</h4>
+            <h4>{{ todo.author }}</h4>
+            <h4>{{ todo.year }}</h4>
         </div>
         {% endfor %}
     </div>
