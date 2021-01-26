@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookStore</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}" />
 </head>
 <body>
     <section>
@@ -58,17 +59,46 @@
         </form>
         </div>
         <div class="todo_container">
-        {% for todo in todo_list %}
-        <div class="container">
-            <h3>{{ todo.title }}</h3>
-            <h4>{{ todo.subtitle }}</h4>
-            <h5>{{ todo.description }}</h5>
-            <h4>{{ todo.price }}</h4>
-            <h4>{{ todo.genre }}</h4>
-            <h4>{{ todo.author }}</h4>
-            <h4>{{ todo.year }}</h4>
-        </div>
-        {% endfor %}
+            {% for todo in todo_list %}
+            <div class="todo_item">
+                <div class="todo_item_header">
+                    <label class="checkbox_container">
+                        <input type="checkbox"/>
+                        <span class="checkmark"></span>
+                    </label>
+                    <ul>
+                        <li>
+                            <h3>{{ todo.title }}</h3>
+                        </li>
+                        <li>
+                            <h4>{{ todo.subtitle }}</h4>
+                        </li>
+                        <li>
+                            <h5>{{ todo.description }}</h5>
+                        </li>
+                        <li>
+                            <h4>{{ todo.price }}</h4>
+                        </li>
+                        <li>
+                            <h4>{{ todo.genre }}</h4>
+                        </li>
+                        <li>
+                            <h4>{{ todo.author }}</h4>
+                        </li>
+                        <li>
+                            <h4>{{ todo.year }}</h4>
+                        </li>
+                    </ul>
+                </div>
+                <div class="todo_item_footer">
+                    <p>{{ todo.created_at }}</p>
+                    <div class="action_buttons">
+                       <img src="{% static './icons/star (1).png' %}"/>
+                       <a href="{% url 'delete-todo' todo.id %}"><img src="{% static './icons/delete.png' %}"/></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}  
     </div>
     </section>
 </body>
