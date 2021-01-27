@@ -24,3 +24,19 @@ def delete_todo(request,id):
     todo.delete()
     return redirect(homepage)
 
+def mark_todo(request,id):
+    todo=Books.objects.get(id=id)
+    todo.is_favorite=True
+    todo.save()
+    return redirect(homepage)
+
+def unmark_todo(request,id):
+    todo=Books.objects.get(id=id)
+    todo.is_favorite=False
+    todo.save()
+    return redirect(homepage)
+
+def book_detail(request,id):
+    todo=Books.objects.get(id=id)
+    todo.save()
+    return render(request, 'book_detail.html')

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
+</head>
+<body>
+    <h5>fghjk</h5>
+        <div class="todo_container"></div>
+            {% for todo in todo_list %}
+            <div class="todo_item">
+                <h3>{{ todo.title }}</h3>
+                <h4>{{ todo.subtitle }}</h4>
+                <h5>{{ todo.description }}</h5>
+                <h4>{{ todo.price }}</h4>
+                <h4>{{ todo.genre }}</h4>
+                <h4>{{ todo.author }}</h4>
+                <h4>{{ todo.year }}</h4>
+            </div>
+            {% endfor %}  
+    </div>
+</body>
+</html>
