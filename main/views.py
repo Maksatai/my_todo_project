@@ -26,17 +26,10 @@ def delete_todo(request,id):
 
 def mark_todo(request,id):
     todo=Books.objects.get(id=id)
-    todo.is_favorite=True
-    todo.save()
-    return redirect(homepage)
-
-def unmark_todo(request,id):
-    todo=Books.objects.get(id=id)
-    todo.is_favorite=False
+    todo.is_favorite=not todo.is_favorite
     todo.save()
     return redirect(homepage)
 
 def book_detail(request,id):
-    todo=Books.objects.get(id=id)
-    todo.save()
-    return render(request, 'book_detail.html')
+    todo_object=Books.objects.filter(id=id)
+    return render(request, 'book_detail.html',{"todo_list":todo_object})
